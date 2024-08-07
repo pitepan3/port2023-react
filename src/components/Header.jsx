@@ -1,46 +1,27 @@
 import React, { useState } from "react";
 
-const headerNav = [
-  {
-    title: "intro",
-    url: "#intro"
-  },
-  {
-    title: "skill",
-    url: "#skill"
-  },
-  {
-    title: "site",
-    url: "#site"
-  },
-  {
-    title: "port",
-    url: "#port"
-  },
-  {
-    title: "contact",
-    url: "#contact"
-  }
-];
+import { headerNav } from "../contants/";
 
 const Header = () => {
   const [show, setShow] = useState(false);
 
   const toggleMenu = () => {
-    setShow((prevShow) => !prevShow)
+    setShow((prevShow) => !prevShow);
   }
-
 
   return (
     <header id="header" role="banner">
       <div className="header__inner">
         <div className="header__logo">
           <h1>
-            <a href="#">portfolio<em>react.js</em></a>
+            <a href="/">portfolio<em>react.js</em></a>
           </h1>
         </div>
-        <nav className={`header__nav ${show ? "show" : ""}`} 
-        role="navigation" aria-label="메인메뉴">
+        <nav
+          className={`header__nav ${show ? "show" : ""}`}
+          role="navigation"
+          aria-label="메인메뉴"
+        >
           <ul>
             {headerNav.map((nav, key) => (
               <li key={key}>
@@ -62,7 +43,7 @@ const Header = () => {
         </div>
       </div>
     </header>
-  );
-};
+  )
+}
 
 export default Header;
